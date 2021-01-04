@@ -1,0 +1,4 @@
+**/__pycache__/*
+
+# Where results are stored:
+trained_models/experiments/**/*

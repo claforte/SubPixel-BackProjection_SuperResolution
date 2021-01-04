@@ -20,25 +20,15 @@ Training code will be released soon.
 #### Install Dependencies
 ```
 # Create virtual environment
-conda create -n sr_env
+conda create -n spbp
+conda activate spbp
 
 # Install torch
-conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+conda install -y pytorch torchvision cudatoolkit=11.0 -c pytorch
+(NOTE: Banarjee used 10.0, not sure if that matters)
 
-# Install skimage
-conda install -c conda-forge scikit-image
-
-# Install visdom
-conda install -c conda-forge visdom
-
-# Install pyyaml
-conda install -c conda-forge pyyaml
-
-# Install tqdm
-conda install -c conda-forge tqdm
-
-# Install OpenCV
-onda install -c conda-forge opencv
+# Install other dependencies
+conda install -y -c conda-forge opencv pyyaml tqdm scikit-image visdom
 ```
 
 ## Datasets

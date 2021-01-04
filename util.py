@@ -9,7 +9,11 @@ import visdom
 from PIL import Image
 from skimage import img_as_float
 from skimage.color import rgb2ycbcr
-from skimage.measure import compare_psnr, compare_ssim
+
+# replaces compare_psnr, compare_ssim:
+from skimage.metrics import peak_signal_noise_ratio, structural_similarity
+#from skimage.measure import compare_psnr, structural_similarity
+
 import cv2
 
 
@@ -224,7 +228,7 @@ def eval_psnr_and_ssim(im1, im2, scale):
         im1_t = crop_boundaries(im1_t, int(scale))
         im2_t = crop_boundaries(im2_t, int(scale))
 
-    psnr_val = compare_psnr(im1_t, im2_t)
+    psnr_val = peak_signal_noise_ratio(im1_t, im2_t)
     ssim_val = compare_ssim(
         im1_t,
         im2_t,
